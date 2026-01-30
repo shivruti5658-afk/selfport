@@ -1,0 +1,58 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'primary-yellow': '#FFD400',
+        'electric-blue': '#0066FF',
+        'custom-black': '#0B0B0B',
+        'graphite-grey': '#1E1E1E',
+        'off-white': '#F5F5F5',
+      },
+      fontFamily: {
+        'space-grotesk': ['"Space Grotesk"', ...fontFamily.sans],
+        'inter': ['"Inter"', ...fontFamily.sans],
+        'ibm-plex-sans': ['"IBM Plex Sans"', ...fontFamily.sans],
+        'jetbrains-mono': ['"JetBrains Mono"', ...fontFamily.mono],
+      },
+      spacing: {
+        'section-desktop': '96px',
+        'section-tablet': '64px',
+        'section-mobile': '48px',
+      },
+      animation: {
+        'reveal': 'reveal 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) forwards',
+        'slide-in': 'slide-in-stagger 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) forwards',
+        'fade-in': 'fade-in 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards',
+        'glow': 'glow 1.5s linear infinite',
+      },
+      keyframes: {
+        'reveal': {
+          '0%': { transform: 'translateY(20px)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 },
+        },
+        'slide-in-stagger': {
+          '0%': { transform: 'translateX(-20px)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        },
+        'fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        'glow': {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.5 },
+        }
+      }
+    },
+  },
+  plugins: [
+    require('tailwindcss-animate')
+  ],
+}
