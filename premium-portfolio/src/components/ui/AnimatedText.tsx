@@ -23,12 +23,12 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   const words = splitWords ? textContent.split(' ') : [textContent];
 
   const childVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: ANIMATION_CONSTANTS.DURATION.NORMAL,
+        duration: ANIMATION_CONSTANTS.DURATION.FAST,
         ease: ANIMATION_CONSTANTS.EASING.ENTRANCE,
       },
     },

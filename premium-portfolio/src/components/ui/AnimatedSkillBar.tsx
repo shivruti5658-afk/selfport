@@ -20,7 +20,7 @@ const AnimatedSkillBar: React.FC<AnimatedSkillBarProps> = ({
 
   useEffect(() => {
     if (isVisible) {
-      const duration = ANIMATION_CONSTANTS.DURATION.VERY_SLOW * 1000; // Convert to ms
+      const duration = ANIMATION_CONSTANTS.DURATION.SLOW * 1000; // Convert to ms
       const increment = level / (duration / 16); // 60fps
       let currentCount = 0;
       
@@ -81,32 +81,17 @@ const AnimatedSkillBar: React.FC<AnimatedSkillBarProps> = ({
             boxShadow: `0 0 20px ${color}40`,
           }}
         >
-          {/* Animated shine effect */}
+          {/* Simplified shine effect */}
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
             initial={{ x: '-100%' }}
             animate={{ x: '100%' }}
             transition={{
-              duration: 2,
+              duration: 3,
               ease: 'easeInOut',
               repeat: Infinity,
-              repeatDelay: 3,
-              delay: delay / 1000 + 1,
-            }}
-          />
-          
-          {/* Glow pulse effect */}
-          <motion.div
-            className={`absolute inset-0 ${colorClasses[color as keyof typeof colorClasses]} opacity-50 blur-sm`}
-            animate={{ 
-              opacity: [0.3, 0.6, 0.3],
-              scale: [1, 1.02, 1],
-            }}
-            transition={{
-              duration: 2,
-              ease: 'easeInOut',
-              repeat: Infinity,
-              delay: delay / 1000 + 0.5,
+              repeatDelay: 5,
+              delay: delay / 1000 + 2,
             }}
           />
         </motion.div>

@@ -4,10 +4,10 @@ import type { Variants, MotionProps } from 'framer-motion';
 export const ANIMATION_CONSTANTS = {
   // Duration
   DURATION: {
-    FAST: 0.2,
-    NORMAL: 0.3,
-    SLOW: 0.4,
-    VERY_SLOW: 0.6,
+    FAST: 0.1,
+    NORMAL: 0.15,
+    SLOW: 0.2,
+    VERY_SLOW: 0.25,
   },
   
   // Easing curves
@@ -20,9 +20,9 @@ export const ANIMATION_CONSTANTS = {
   
   // Stagger delays
   STAGGER: {
-    FAST: 0.05,
-    NORMAL: 0.1,
-    SLOW: 0.15,
+    FAST: 0.02,
+    NORMAL: 0.03,
+    SLOW: 0.05,
   },
   
   // Viewport thresholds
@@ -68,12 +68,12 @@ export const staggeredChildrenVariants: Variants = {
 
 // Scroll Animation Variants
 export const scrollAnimationVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: ANIMATION_CONSTANTS.DURATION.SLOW,
+      duration: ANIMATION_CONSTANTS.DURATION.FAST,
       ease: ANIMATION_CONSTANTS.EASING.SMOOTH,
     },
   },
@@ -82,56 +82,56 @@ export const scrollAnimationVariants: Variants = {
 // Directional Animation Variants
 export const directionalVariants = {
   left: {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -25 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: ANIMATION_CONSTANTS.DURATION.NORMAL,
+        duration: ANIMATION_CONSTANTS.DURATION.FAST,
         ease: ANIMATION_CONSTANTS.EASING.SMOOTH,
       },
     },
   },
   right: {
-    hidden: { opacity: 0, x: 50 },
+    hidden: { opacity: 0, x: 25 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: ANIMATION_CONSTANTS.DURATION.NORMAL,
+        duration: ANIMATION_CONSTANTS.DURATION.FAST,
         ease: ANIMATION_CONSTANTS.EASING.SMOOTH,
       },
     },
   },
   up: {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 25 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: ANIMATION_CONSTANTS.DURATION.NORMAL,
+        duration: ANIMATION_CONSTANTS.DURATION.FAST,
         ease: ANIMATION_CONSTANTS.EASING.SMOOTH,
       },
     },
   },
   down: {
-    hidden: { opacity: 0, y: -50 },
+    hidden: { opacity: 0, y: -25 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: ANIMATION_CONSTANTS.DURATION.NORMAL,
+        duration: ANIMATION_CONSTANTS.DURATION.FAST,
         ease: ANIMATION_CONSTANTS.EASING.SMOOTH,
       },
     },
   },
   center: {
-    hidden: { opacity: 0, scale: 0.95 },
+    hidden: { opacity: 0, scale: 0.98 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: ANIMATION_CONSTANTS.DURATION.NORMAL,
+        duration: ANIMATION_CONSTANTS.DURATION.FAST,
         ease: ANIMATION_CONSTANTS.EASING.SMOOTH,
       },
     },
@@ -142,17 +142,17 @@ export const directionalVariants = {
 export const hoverVariants: Variants = {
   initial: { scale: 1, y: 0 },
   hover: {
-    scale: 1.04,
-    y: -2,
+    scale: 1.02,
+    y: -1,
     transition: {
       duration: ANIMATION_CONSTANTS.DURATION.FAST,
       ease: ANIMATION_CONSTANTS.EASING.SMOOTH,
     },
   },
   tap: {
-    scale: 0.98,
+    scale: 0.99,
     transition: {
-      duration: ANIMATION_CONSTANTS.DURATION.FAST,
+      duration: 0.05,
       ease: ANIMATION_CONSTANTS.EASING.EXIT,
     },
   },
@@ -198,7 +198,7 @@ export const backgroundVariants: Variants = {
   animate: {
     backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
     transition: {
-      duration: 20,
+      duration: 30,
       ease: 'linear',
       repeat: Infinity,
     },
@@ -318,13 +318,13 @@ export const routeTransition = {
 // Particle Animation for Background
 export const particleVariants: Variants = {
   animate: {
-    y: [0, -100, 0],
-    opacity: [0, 1, 0],
+    y: [0, -50, 0],
+    opacity: [0, 0.7, 0],
     transition: {
-      duration: 10,
+      duration: 15,
       ease: 'linear',
       repeat: Infinity,
-      repeatDelay: Math.random() * 5,
+      repeatDelay: Math.random() * 3,
     },
   },
 };

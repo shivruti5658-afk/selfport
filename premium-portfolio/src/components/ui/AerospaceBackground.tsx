@@ -24,14 +24,14 @@ const AerospaceBackground: React.FC<AerospaceBackgroundProps> = ({ children }) =
   useEffect(() => {
     const generateParticles = () => {
       const newParticles: Particle[] = [];
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 20; i++) {
         newParticles.push({
           id: i,
           x: Math.random() * window.innerWidth,
           y: Math.random() * window.innerHeight,
-          size: Math.random() * 2 + 1,
-          speed: Math.random() * 0.5 + 0.1,
-          opacity: Math.random() * 0.5 + 0.2,
+          size: Math.random() * 1.5 + 0.5,
+          speed: Math.random() * 0.3 + 0.1,
+          opacity: Math.random() * 0.3 + 0.1,
         });
       }
       setParticles(newParticles);
