@@ -131,7 +131,7 @@ const Navbar = () => {
             <motion.div className="lg:hidden" variants={staggeredChildrenVariants}>
               <motion.button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="relative p-3 rounded-lg text-gray-300 hover:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-white group"
+                className="relative p-3 rounded-xl text-gray-200 hover:text-white hover:bg-gray-800/70 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black group transition-all duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: ANIMATION_CONSTANTS.DURATION.FAST }}
@@ -154,37 +154,37 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         <motion.div 
-          className={`lg:hidden overflow-hidden bg-black/80 backdrop-blur-md border-t border-gray-800`}
+          className={`lg:hidden fixed inset-x-0 top-20 bottom-0 bg-black/95 backdrop-blur-lg border-t border-gray-700 z-50`}
           initial="hidden"
           animate={isMobileMenuOpen ? "visible" : "hidden"}
           variants={mobileMenuVariants}
         >
-          <div className="px-4 py-6 space-y-2">
+          <div className="px-4 py-6 space-y-1 max-h-screen overflow-y-auto">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.path;
                 return (
                   <motion.div
                     key={link.name}
-                    className="block px-4 py-3 rounded-lg text-base font-medium transform"
+                    className="block px-4 py-4 rounded-xl text-base font-medium bg-gray-800/50 border border-gray-700 hover:bg-gray-700/50 transition-all duration-200"
                     variants={staggeredChildrenVariants}
-                    whileHover={{ scale: 1.02, translateX: 8 }}
+                    whileHover={{ scale: 1.02, translateX: 4 }}
                     transition={{ duration: ANIMATION_CONSTANTS.DURATION.FAST }}
                   >
                     <NavLink
                       to={link.path}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`flex items-center justify-between ${
+                      className={`flex items-center justify-between w-full ${
                         isActive 
-                          ? 'text-white' 
-                          : 'text-gray-300 hover:text-white'
+                          ? 'text-white bg-blue-600/20 border-blue-500/30' 
+                          : 'text-gray-200 hover:text-white'
                       }`}
                     >
                       <span>{link.name}</span>
                       {isActive && (
                         <motion.div 
-                          className="w-2 h-2 bg-white rounded-full" 
+                          className="w-3 h-3 bg-blue-400 rounded-full border-2 border-white" 
                           animate={{ scale: [1, 1.2, 1] }}
-                          transition={{ duration: 1, repeat: Infinity }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
                         />
                       )}
                     </NavLink>
@@ -195,20 +195,20 @@ const Navbar = () => {
           
           {/* Mobile menu footer */}
           <motion.div 
-            className="px-4 py-4 border-t border-gray-800"
+            className="px-4 py-6 border-t border-gray-700 bg-gray-800/30"
             variants={staggeredChildrenVariants}
           >
-              <div className="flex items-center justify-between text-xs text-gray-400">
+              <div className="flex items-center justify-between text-sm text-gray-300">
                 <motion.div 
-                  className="flex items-center space-x-2"
+                  className="flex items-center space-x-3"
                   variants={staggeredChildrenVariants}
                 >
                   <motion.a 
                     href="https://linkedin.com" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="hover:text-white"
-                    whileHover={{ scale: 1.2 }}
+                    className="p-2 rounded-lg bg-gray-700/50 hover:bg-gray-600/50 transition-colors"
+                    whileHover={{ scale: 1.1 }}
                     transition={{ duration: ANIMATION_CONSTANTS.DURATION.FAST }}
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -216,7 +216,7 @@ const Navbar = () => {
                     </svg>
                     </motion.a>
                 </motion.div>
-                <span>STATUS: ACTIVE</span>
+                <span className="font-mono text-xs">STATUS: ACTIVE</span>
               </div>
           </motion.div>
         </motion.div>
@@ -225,7 +225,7 @@ const Navbar = () => {
       {/* Navigation overlay for mobile */}
       {isMobileMenuOpen && (
         <motion.div 
-          className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+          className="lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-30"
           onClick={() => setIsMobileMenuOpen(false)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
