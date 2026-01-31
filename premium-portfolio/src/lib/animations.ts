@@ -2,15 +2,15 @@ import type { Variants, MotionProps } from 'framer-motion';
 
 // Global Animation Constants
 export const ANIMATION_CONSTANTS = {
-  // Duration
+  // Duration - Reduced for mobile performance
   DURATION: {
-    FAST: 0.1,
-    NORMAL: 0.15,
-    SLOW: 0.2,
-    VERY_SLOW: 0.25,
+    FAST: 0.05,
+    NORMAL: 0.08,
+    SLOW: 0.1,
+    VERY_SLOW: 0.12,
   },
   
-  // Easing curves
+  // Easing curves - Simplified for performance
   EASING: {
     SMOOTH: [0.4, 0, 0.2, 1] as const,
     ENTRANCE: [0.25, 0.46, 0.45, 0.94] as const,
@@ -18,11 +18,11 @@ export const ANIMATION_CONSTANTS = {
     BOUNCE: [0.68, -0.55, 0.265, 1.55] as const,
   },
   
-  // Stagger delays
+  // Stagger delays - Reduced for mobile
   STAGGER: {
-    FAST: 0.02,
-    NORMAL: 0.03,
-    SLOW: 0.05,
+    FAST: 0.01,
+    NORMAL: 0.015,
+    SLOW: 0.02,
   },
   
   // Viewport thresholds
@@ -39,9 +39,15 @@ export const shouldReduceMotion = () => {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 };
 
-// Page Load Variants
+// Check for mobile device
+export const isMobileDevice = () => {
+  if (typeof window === 'undefined') return false;
+  return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+};
+
+// Page Load Variants - Mobile optimized
 export const pageLoadVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: isMobileDevice() ? 10 : 20 },
   visible: {
     opacity: 1,
     y: 0,
@@ -53,9 +59,9 @@ export const pageLoadVariants: Variants = {
   },
 };
 
-// Staggered Children Variants
+// Staggered Children Variants - Mobile optimized
 export const staggeredChildrenVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: isMobileDevice() ? 10 : 20 },
   visible: {
     opacity: 1,
     y: 0,
@@ -66,9 +72,9 @@ export const staggeredChildrenVariants: Variants = {
   },
 };
 
-// Scroll Animation Variants
+// Scroll Animation Variants - Mobile optimized
 export const scrollAnimationVariants: Variants = {
-  hidden: { opacity: 0, y: 15 },
+  hidden: { opacity: 0, y: isMobileDevice() ? 8 : 15 },
   visible: {
     opacity: 1,
     y: 0,
@@ -79,10 +85,10 @@ export const scrollAnimationVariants: Variants = {
   },
 };
 
-// Directional Animation Variants
+// Directional Animation Variants - Reduced distances for mobile
 export const directionalVariants = {
   left: {
-    hidden: { opacity: 0, x: -25 },
+    hidden: { opacity: 0, x: isMobileDevice() ? -15 : -25 },
     visible: {
       opacity: 1,
       x: 0,
@@ -93,7 +99,7 @@ export const directionalVariants = {
     },
   },
   right: {
-    hidden: { opacity: 0, x: 25 },
+    hidden: { opacity: 0, x: isMobileDevice() ? 15 : 25 },
     visible: {
       opacity: 1,
       x: 0,
@@ -104,7 +110,7 @@ export const directionalVariants = {
     },
   },
   up: {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: isMobileDevice() ? 15 : 25 },
     visible: {
       opacity: 1,
       y: 0,
@@ -115,7 +121,7 @@ export const directionalVariants = {
     },
   },
   down: {
-    hidden: { opacity: 0, y: -25 },
+    hidden: { opacity: 0, y: isMobileDevice() ? -15 : -25 },
     visible: {
       opacity: 1,
       y: 0,
@@ -126,7 +132,7 @@ export const directionalVariants = {
     },
   },
   center: {
-    hidden: { opacity: 0, scale: 0.98 },
+    hidden: { opacity: 0, scale: isMobileDevice() ? 0.99 : 0.98 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -254,14 +260,16 @@ export const getAnimationProps = (
     },
   };
 
-  if (shouldReduceMotion()) {
+  const isMobile = isMobileDevice();
+
+  if (shouldReduceMotion() || isMobile) {
     return {
       ...baseProps,
       variants: {
         hidden: { opacity: 0 },
         visible: { opacity: 1 },
       },
-      transition: { duration: 0.1 },
+      transition: { duration: isMobile ? 0.05 : 0.1 },
     };
   }
 

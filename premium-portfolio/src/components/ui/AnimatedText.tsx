@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { staggeredChildrenVariants, getAnimationProps, ANIMATION_CONSTANTS } from '../../lib/animations';
+import { staggeredChildrenVariants, getAnimationProps, ANIMATION_CONSTANTS, isMobileDevice } from '../../lib/animations';
 
 interface AnimatedTextProps {
   children: React.ReactNode;
@@ -20,15 +20,17 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   splitWords = false
 }) => {
   const textContent = typeof children === 'string' ? children : '';
-  const words = splitWords ? textContent.split(' ') : [textContent];
+  const isMobile = isMobileDevice();
+  const shouldSplitWords = splitWords && !isMobile; // Disable splitWords on mobile
+  const words = shouldSplitWords ? textContent.split(' ') : [textContent];
 
   const childVariants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0, y: isMobile ? 5 : 10 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: ANIMATION_CONSTANTS.DURATION.FAST,
+        duration: isMobile ? ANIMATION_CONSTANTS.DURATION.FAST : ANIMATION_CONSTANTS.DURATION.FAST,
         ease: ANIMATION_CONSTANTS.EASING.ENTRANCE,
       },
     },
@@ -38,18 +40,18 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: staggerDelay,
+        staggerChildren: isMobile ? ANIMATION_CONSTANTS.STAGGER.FAST : staggerDelay,
         delayChildren: delay,
       },
     },
   };
 
-  if (splitWords && typeof children === 'string') {
+  if (shouldSplitWords && typeof children === 'string') {
     return (
       <motion.div
         className={className}
         variants={containerVariants}
-        {...getAnimationProps(containerVariants, { transition: { staggerChildren: staggerDelay, delayChildren: delay } }, threshold)}
+        {...getAnimationProps(containerVariants, { transition: { staggerChildren: isMobile ? ANIMATION_CONSTANTS.STAGGER.FAST : staggerDelay, delayChildren: delay } }, threshold)}
       >
         {words.map((word, index) => (
           <motion.span

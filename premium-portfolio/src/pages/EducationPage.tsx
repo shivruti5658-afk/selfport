@@ -79,14 +79,13 @@ const EducationPage: React.FC = () => {
         <div className="max-w-7xl mx-auto text-center">
           <AnimatedText 
             className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-            delay={100}
-            splitWords
+            delay={50}
           >
             Education
           </AnimatedText>
           <AnimatedText 
             className="text-xl text-gray-300 max-w-3xl mx-auto"
-            delay={200}
+            delay={100}
           >
             Academic foundation and educational journey in aerospace engineering
           </AnimatedText>
@@ -102,7 +101,7 @@ const EducationPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
             className="text-3xl font-bold mb-8 text-blue-400 text-center"
-            delay={300}
+            delay={150}
           >
             Academic Journey
           </AnimatedText>
@@ -131,13 +130,13 @@ const EducationPage: React.FC = () => {
                   <div className="text-right">
                     <AnimatedText 
                       className="text-2xl font-bold text-blue-400"
-                      delay={400 + index * 100}
+                      delay={200 + index * 50}
                     >
                       {edu.performance}
                     </AnimatedText>
                     <AnimatedText 
                       className="text-sm text-gray-400"
-                      delay={500 + index * 100}
+                      delay={250 + index * 50}
                     >
                       {edu.duration}
                     </AnimatedText>
@@ -148,19 +147,19 @@ const EducationPage: React.FC = () => {
                 <div className="mb-6">
                   <AnimatedText 
                     className="text-2xl font-bold text-white mb-2"
-                    delay={600 + index * 100}
+                    delay={300 + index * 50}
                   >
                     {edu.degree}
                   </AnimatedText>
                   <AnimatedText 
                     className="text-lg text-blue-400 mb-4"
-                    delay={700 + index * 100}
+                    delay={350 + index * 50}
                   >
                     {edu.institution}
                   </AnimatedText>
                   <AnimatedText 
                     className="text-gray-300 leading-relaxed"
-                    delay={800 + index * 100}
+                    delay={400 + index * 50}
                   >
                     {edu.description}
                   </AnimatedText>
@@ -170,7 +169,7 @@ const EducationPage: React.FC = () => {
                 <div className="mb-6">
                   <AnimatedText 
                     className="text-lg font-semibold text-white mb-3"
-                    delay={900 + index * 100}
+                    delay={450 + index * 50}
                   >
                     Key Highlights
                   </AnimatedText>
@@ -180,7 +179,7 @@ const EducationPage: React.FC = () => {
                         <span className="text-blue-400 mr-3 mt-1">•</span>
                         <AnimatedText 
                           className="text-gray-300"
-                          delay={1000 + index * 100 + idx * 50}
+                          delay={500 + index * 50 + idx * 25}
                         >
                           {highlight}
                         </AnimatedText>
@@ -193,7 +192,7 @@ const EducationPage: React.FC = () => {
                 <div>
                   <AnimatedText 
                     className="text-lg font-semibold text-white mb-3"
-                    delay={1100 + index * 100}
+                    delay={550 + index * 50}
                   >
                     Key Courses
                   </AnimatedText>
@@ -218,12 +217,12 @@ const EducationPage: React.FC = () => {
       <AnimatedSection 
         direction="right" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={400}
+        delay={200}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
             className="text-3xl font-bold mb-8 text-purple-400 text-center"
-            delay={500}
+            delay={250}
           >
             Academic Achievements
           </AnimatedText>
@@ -261,20 +260,19 @@ const EducationPage: React.FC = () => {
       <AnimatedSection 
         direction="center" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={500}
+        delay={250}
       >
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-400/30 rounded-lg p-12">
             <AnimatedText 
               className="text-3xl font-bold mb-6 text-white"
-              delay={600}
-              splitWords
+              delay={300}
             >
               Continuous Learning & Growth
             </AnimatedText>
             <AnimatedText 
               className="text-xl text-gray-300 mb-8"
-              delay={700}
+              delay={350}
             >
               My educational journey is complemented by continuous learning through research, projects, and professional development in aerospace engineering.
             </AnimatedText>
