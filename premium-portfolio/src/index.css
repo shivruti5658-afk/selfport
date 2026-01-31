@@ -276,6 +276,82 @@ code, pre {
   }
 }
 
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Reduce padding on mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Better mobile typography */
+  h1 { 
+    font-size: 2rem; 
+    line-height: 1.1;
+  }
+  
+  h2 { 
+    font-size: 1.5rem; 
+    line-height: 1.2;
+  }
+  
+  h3 { 
+    font-size: 1.25rem; 
+    line-height: 1.3;
+  }
+  
+  /* Improve mobile button spacing */
+  .btn-primary, .btn-secondary {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Better mobile cards */
+  .card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Mobile navigation improvements */
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Reduce animations on mobile for better performance */
+  .floating-shape {
+    animation-duration: 8s;
+  }
+  
+  /* Better mobile grid spacing */
+  .grid {
+    gap: 1rem;
+  }
+  
+  /* Mobile text spacing */
+  p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  /* Mobile section spacing */
+  section {
+    padding: 3rem 0;
+  }
+}
+
+/* Tablet improvements */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  section {
+    padding: 4rem 0;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

@@ -72,7 +72,7 @@ const Navbar = () => {
                 className="group flex items-center space-x-2"
                 {...hoverVariants}
               >
-                <span className="text-white font-bold text-3xl">
+                <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl">
                   Portfolio <span className="text-cyan-400">(S.K.)</span>
                 </span>
               </NavLink>
@@ -131,8 +131,8 @@ const Navbar = () => {
             <motion.div className="lg:hidden" variants={staggeredChildrenVariants}>
               <motion.button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="relative p-2 rounded-lg text-gray-300 hover:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-white group"
-                whileHover={{ scale: 1.1 }}
+                className="relative p-3 rounded-lg text-gray-300 hover:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-white group"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: ANIMATION_CONSTANTS.DURATION.FAST }}
               >

@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
             <motion.div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-blue-600 blur-3xl opacity-20 animate-pulse"></div>
               <AnimatedText 
-                className="relative text-6xl md:text-5xl lg:text-8xl font-bold text-white leading-tight cursor-default tracking-tight mt-12"
+                className="relative text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white leading-tight cursor-default tracking-tight mt-12"
                 delay={100}
               >
                 Shivam Kumar
@@ -38,13 +38,13 @@ const HomePage: React.FC = () => {
             {/* Professional Title */}
             <motion.div className="space-y-4" variants={staggeredChildrenVariants}>
               <AnimatedText 
-                className="text-2xl md:text-3xl lg:text-4xl font-semibold text-yellow-400 tracking-wide"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-yellow-400 tracking-wide"
                 delay={200}
               >
                 Aerospace Engineering Undergraduate
               </AnimatedText>
               <AnimatedText 
-                className="text-xl md:text-2xl lg:text-3xl font-medium text-blue-400 tracking-wide"
+                className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-blue-400 tracking-wide"
                 delay={300}
               >
                 Propulsion & UAV Systems | Research-Oriented Technologist
@@ -53,7 +53,7 @@ const HomePage: React.FC = () => {
             
             {/* Professional Tagline */}
             <AnimatedText 
-              className="max-w-4xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light"
+              className="max-w-4xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed font-light"
               delay={400}
             >
               Aerospace engineering student with hands-on experience in launch vehicle wind analysis, 
