@@ -56,15 +56,22 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
+        className={`fixed top-3 left-4 right-4 z-50 transition-all duration-300 ease-out shadow-lg shadow-cyan-500/20 ${
           isScrolled 
-            ? 'bg-black/80 backdrop-blur-md border-b border-gray-800' 
-            : 'bg-transparent'
+            ? 'bg-black/80 backdrop-blur-md border border-cyan-800 rounded-full' 
+            : 'bg-transparent border border-blue-800 rounded-full'
         }`}
+        style={{
+          borderRadius: '50px',
+          borderTopLeftRadius: '100px',
+          borderTopRightRadius: '100px',
+          borderBottomLeftRadius: '100px',
+          borderBottomRightRadius: '100px',
+        }}
         {...getAnimationProps(navVariants)}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-14">
             {/* Logo/Brand */}
             <motion.div className="flex-shrink-0" variants={staggeredChildrenVariants}>
               <NavLink 
@@ -154,7 +161,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         <motion.div 
-          className={`lg:hidden fixed inset-x-0 top-20 bottom-0 bg-black/95 backdrop-blur-lg border-t border-gray-700 z-50`}
+          className={`lg:hidden fixed inset-x-0 top-24 bottom-0 bg-black/95 backdrop-blur-lg border-t border-gray-700 z-50`}
           initial="hidden"
           animate={isMobileMenuOpen ? "visible" : "hidden"}
           variants={mobileMenuVariants}
