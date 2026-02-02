@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd premium-portfolio && npm run build",
+  "outputDirectory": "premium-portfolio/dist",
+  "installCommand": "cd premium-portfolio && npm install"
+}
