@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
                 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white leading-tight cursor-default tracking-tight mt-8 sm:mt-10 lg:mt-12"
                 delay={0}
               >
-                Shivam 
+                Shivam kumar test
               </AnimatedText>
             </motion.div>
             
