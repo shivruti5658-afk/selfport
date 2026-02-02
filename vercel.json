@@ -1,6 +1,7 @@
 {
-  "buildCommand": "cd premium-portfolio && npm run build",
-  "outputDirectory": "premium-portfolio/dist",
-  "installCommand": "cd premium-portfolio && npm install",
+  "root": "premium-portfolio",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
   "framework": "vite"
 }
