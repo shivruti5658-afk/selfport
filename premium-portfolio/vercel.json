@@ -1,5 +1,4 @@
 {
-  "root": "premium-portfolio",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
