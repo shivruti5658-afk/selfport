@@ -47,7 +47,7 @@ const AboutPage: React.FC = () => {
   const professionalJourney = [
     {
       phase: "Academic Foundation",
-      period: "2021 - 2025",
+      period: "2022 - 2026",
       description: "Building strong theoretical foundation in aerospace engineering with focus on propulsion systems, aerodynamics, and computational methods.",
       achievements: ["Dean's List", "Academic Excellence Awards", "Technical Competitions"]
     },
@@ -59,13 +59,13 @@ const AboutPage: React.FC = () => {
     },
     {
       phase: "Industry Exposure",
-      period: "2025 - Present",
+      period: "2023 - Present",
       description: "Gaining practical industry experience through internships and collaborative projects with leading aerospace organizations.",
       achievements: ["ISRO Internship", "Industry Projects", "Technical Certifications"]
     },
     {
       phase: "Technical Leadership",
-      period: "2025 - Present",
+      period: "2023 - Present",
       description: "Leading technical initiatives and contributing to complex aerospace engineering challenges with innovative solutions.",
       achievements: ["Project Leadership", "Technical Innovation", "Mentorship"]
     }
@@ -76,19 +76,19 @@ const AboutPage: React.FC = () => {
       {/* Header Section */}
       <AnimatedSection 
         direction="center" 
-        className="min-h-screen text-white px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center"
+        className="min-h-[60vh] sm:min-h-screen text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20 flex items-center justify-center"
       >
         <div className="max-w-7xl mx-auto text-center">
           <AnimatedText 
-            className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-blue-500 bg-clip-text text-transparent"
-            delay={100}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-yellow-400 to-blue-500 bg-clip-text text-transparent"
+            delay={0}
             splitWords
           >
             About Me
           </AnimatedText>
           <AnimatedText 
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
-            delay={200}
+            className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
+            delay={0}
           >
             Objective-driven summary of my professional journey and capabilities in aerospace engineering
           </AnimatedText>
@@ -98,20 +98,20 @@ const AboutPage: React.FC = () => {
       {/* Professional Summary */}
       <AnimatedSection 
         direction="up" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={200}
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-yellow-900/20 to-blue-900/20 border border-yellow-400/30 rounded-lg p-8">
+          <div className="bg-gradient-to-r from-yellow-900/20 to-blue-900/20 border border-yellow-400/30 rounded-lg p-4 sm:p-6 lg:p-8">
             <AnimatedText 
-              className="text-3xl font-bold mb-6 text-yellow-400"
-              delay={300}
+              className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-yellow-400"
+              delay={0}
             >
               {professionalSummary.title}
             </AnimatedText>
             <AnimatedText 
-              className="text-lg text-gray-300 leading-relaxed mb-8"
-              delay={400}
+              className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8"
+              delay={0}
             >
               {professionalSummary.description}
             </AnimatedText>
@@ -121,7 +121,7 @@ const AboutPage: React.FC = () => {
                   <span className="text-yellow-400 mr-3 mt-1">•</span>
                   <AnimatedText 
                     className="text-gray-300"
-                    delay={500 + index * 100}
+                    delay={0}
                   >
                     {highlight}
                   </AnimatedText>
@@ -135,34 +135,34 @@ const AboutPage: React.FC = () => {
       {/* Core Competencies */}
       <AnimatedSection 
         direction="left" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={300}
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
-            className="text-3xl font-bold mb-8 text-blue-400"
-            delay={400}
+            className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-blue-400"
+            delay={0}
           >
             Core Competencies
           </AnimatedText>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
             {coreCompetencies.map((competency, index) => (
               <div 
                 key={index}
-                className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-400/50 transition-all duration-300"
+                className="bg-gray-900/50 border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-blue-400/50 transition-all duration-300"
               >
                 <div className="flex items-center mb-4">
                   <div className="text-4xl mr-4">{competency.icon}</div>
                   <AnimatedText 
                     className="text-xl font-bold text-white"
-                    delay={500 + index * 100}
+                    delay={0}
                   >
                     {competency.title}
                   </AnimatedText>
                 </div>
                 <AnimatedText 
                   className="text-gray-300 mb-4 leading-relaxed"
-                  delay={600 + index * 100}
+                  delay={0}
                 >
                   {competency.description}
                 </AnimatedText>
@@ -185,57 +185,59 @@ const AboutPage: React.FC = () => {
       {/* Professional Journey */}
       <AnimatedSection 
         direction="right" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={400}
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
-            className="text-3xl font-bold mb-8 text-purple-400"
-            delay={500}
+            className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-purple-400 text-center sm:text-left"
+            delay={0}
           >
             Professional Journey
           </AnimatedText>
           <div className="relative">
-            {/* Timeline */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-400 to-blue-400"></div>
+            {/* Timeline - Mobile: Left aligned, Tablet/Medium: Left aligned with more space, Desktop: Center */}
+            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-400 to-blue-400"></div>
             
-            <div className="space-y-12">
+            <div className="space-y-4 sm:space-y-6 md:space-y-12">
               {professionalJourney.map((phase, index) => (
                 <div 
                   key={index}
-                  className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+                  className={`relative flex items-center md:justify-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
                 >
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
+                  {/* Mobile/Tablet: Full width with left padding, Desktop: Alternating 5/12 width */}
+                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'} pl-6 md:pl-0`}>
                     <AnimatedText 
-                      className="text-xl font-bold text-white mb-2"
-                      delay={600 + index * 150}
+                      className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2"
+                      delay={0}
                     >
                       {phase.phase}
                     </AnimatedText>
                     <AnimatedText 
-                      className="text-sm text-gray-400 mb-2"
-                      delay={700 + index * 150}
+                      className="text-xs sm:text-sm text-gray-400 mb-1"
+                      delay={0}
                     >
                       {phase.period}
                     </AnimatedText>
                     <AnimatedText 
-                      className="text-gray-300 mb-4"
-                      delay={800 + index * 150}
+                      className="text-sm sm:text-base text-gray-300 mb-2 sm:mb-4 leading-relaxed"
+                      delay={0}
                     >
                       {phase.description}
                     </AnimatedText>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-1.5 md:gap-2">
                       {phase.achievements.map((achievement, idx) => (
                         <span 
                           key={idx}
-                          className="px-2 py-1 bg-purple-900/50 text-purple-400 rounded-full text-xs border border-purple-400/30"
+                          className="px-1 py-0.5 sm:px-1.5 sm:py-0.5 md:px-2 md:py-1 bg-purple-900/50 text-purple-400 rounded-full text-xs border border-purple-400/30"
                         >
                           {achievement}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-400 rounded-full border-4 border-gray-900"></div>
+                  {/* Timeline dot - Mobile/Tablet: Left aligned, Desktop: Center */}
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-purple-400 rounded-full border-2 sm:border-4 border-gray-900"></div>
                 </div>
               ))}
             </div>
@@ -246,21 +248,21 @@ const AboutPage: React.FC = () => {
       {/* Call to Action */}
       <AnimatedSection 
         direction="center" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={500}
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-400/30 rounded-lg p-12">
+          <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-400/30 rounded-lg p-6 sm:p-8 lg:p-12">
             <AnimatedText 
-              className="text-3xl font-bold mb-6 text-white"
-              delay={600}
+              className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-white"
+              delay={0}
               splitWords
             >
               Let's Connect and Collaborate
             </AnimatedText>
             <AnimatedText 
-              className="text-xl text-gray-300 mb-8"
-              delay={700}
+              className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8"
+              delay={0}
             >
               I'm always interested in discussing aerospace engineering challenges, research opportunities, and innovative projects.
             </AnimatedText>

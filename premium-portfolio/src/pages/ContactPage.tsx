@@ -37,19 +37,19 @@ const ContactPage: React.FC = () => {
       {/* Header Section */}
       <AnimatedSection 
         direction="center" 
-        className="min-h-screen text-white px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center"
+        className="min-h-[60vh] sm:min-h-screen text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20 flex items-center justify-center"
       >
         <div className="max-w-7xl mx-auto text-center">
           <AnimatedText 
             className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-            delay={100}
+            delay={0}
             splitWords
           >
             Contact & Professional Links
           </AnimatedText>
           <AnimatedText 
             className="text-xl text-gray-300 max-w-3xl mx-auto"
-            delay={200}
+            delay={0}
           >
             Let's connect and discuss opportunities in aerospace engineering, research, and innovation
           </AnimatedText>
@@ -60,7 +60,7 @@ const ContactPage: React.FC = () => {
       <AnimatedSection 
         direction="up" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={200}
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid gap-12 lg:grid-cols-2">
@@ -68,7 +68,7 @@ const ContactPage: React.FC = () => {
             <div>
               <AnimatedText 
                 className="text-3xl font-bold mb-8 text-blue-400"
-                delay={300}
+                delay={0}
               >
                 Get In Touch
               </AnimatedText>
@@ -83,7 +83,7 @@ const ContactPage: React.FC = () => {
                       <div className="flex-1">
                         <AnimatedText 
                           className="text-lg font-semibold text-white mb-1"
-                          delay={400 + index * 100}
+                          delay={0}
                         >
                           {contact.type}
                         </AnimatedText>
@@ -106,7 +106,7 @@ const ContactPage: React.FC = () => {
             <div>
               <AnimatedText 
                 className="text-3xl font-bold mb-8 text-purple-400"
-                delay={500}
+                delay={0}
               >
                 Send Message
               </AnimatedText>
@@ -153,12 +153,12 @@ const ContactPage: React.FC = () => {
       <AnimatedSection 
         direction="left" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={400}
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
             className="text-3xl font-bold mb-8 text-green-400 text-center"
-            delay={600}
+            delay={0}
           >
             Professional Networks
           </AnimatedText>
@@ -167,7 +167,7 @@ const ContactPage: React.FC = () => {
               <div className="text-4xl mb-4">🔬</div>
               <AnimatedText 
                 className="text-xl font-bold text-white mb-2"
-                delay={700}
+                delay={0}
               >
                 ResearchGate
               </AnimatedText>
@@ -184,7 +184,7 @@ const ContactPage: React.FC = () => {
               <div className="text-4xl mb-4">🎓</div>
               <AnimatedText 
                 className="text-xl font-bold text-white mb-2"
-                delay={800}
+                delay={0}
               >
                 GitHub
               </AnimatedText>
@@ -201,7 +201,7 @@ const ContactPage: React.FC = () => {
               <div className="text-4xl mb-4">📚</div>
               <AnimatedText 
                 className="text-xl font-bold text-white mb-2"
-                delay={900}
+                delay={0}
               >
                 Academic Profile
               </AnimatedText>
@@ -222,20 +222,20 @@ const ContactPage: React.FC = () => {
       <AnimatedSection 
         direction="center" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={500}
+        delay={0}
       >
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-400/30 rounded-lg p-12">
             <AnimatedText 
               className="text-3xl font-bold mb-6 text-white"
-              delay={1000}
+              delay={0}
               splitWords
             >
               Let's Build Something Amazing Together
             </AnimatedText>
             <AnimatedText 
               className="text-xl text-gray-300 mb-8"
-              delay={1100}
+              delay={0}
             >
               I'm always excited to collaborate on challenging aerospace engineering projects, research initiatives, and innovative technological solutions. Let's discuss how we can work together to advance aerospace technology.
             </AnimatedText>

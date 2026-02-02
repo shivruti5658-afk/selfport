@@ -7,7 +7,6 @@ interface AnimatedTextProps {
   className?: string;
   delay?: number;
   staggerDelay?: number;
-  threshold?: number;
   splitWords?: boolean;
 }
 
@@ -16,7 +15,6 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   className = '',
   delay = 0,
   staggerDelay = ANIMATION_CONSTANTS.STAGGER.FAST,
-  threshold = ANIMATION_CONSTANTS.VIEWPORT.NORMAL,
   splitWords = false
 }) => {
   const textContent = typeof children === 'string' ? children : '';
@@ -51,7 +49,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
       <motion.div
         className={className}
         variants={containerVariants}
-        {...getAnimationProps(containerVariants, { transition: { staggerChildren: isMobile ? ANIMATION_CONSTANTS.STAGGER.FAST : staggerDelay, delayChildren: delay } }, threshold)}
+        {...getAnimationProps(containerVariants, { transition: { staggerChildren: isMobile ? ANIMATION_CONSTANTS.STAGGER.FAST : staggerDelay, delayChildren: delay } })}
       >
         {words.map((word, index) => (
           <motion.span
@@ -70,7 +68,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
     <motion.div
       className={className}
       variants={staggeredChildrenVariants}
-      {...getAnimationProps(staggeredChildrenVariants, { transition: { delay: delay } }, threshold)}
+      {...getAnimationProps(staggeredChildrenVariants, { transition: { delay: delay } })}
     >
       {children}
     </motion.div>

@@ -1,21 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { directionalVariants, getAnimationProps, ANIMATION_CONSTANTS } from '../../lib/animations';
+import { directionalVariants, getAnimationProps } from '../../lib/animations';
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
   direction?: 'left' | 'right' | 'center' | 'up' | 'down';
   delay?: number;
   className?: string;
-  threshold?: number;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
   children, 
   direction = 'center', 
   delay = 0,
-  className = '',
-  threshold = ANIMATION_CONSTANTS.VIEWPORT.NORMAL
+  className = ''
 }) => {
   const getVariants = () => {
     switch (direction) {
@@ -35,7 +33,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   return (
     <motion.section
       className={className}
-      {...getAnimationProps(getVariants(), { transition: { delay: delay } }, threshold)}
+      {...getAnimationProps(getVariants(), { transition: { delay: delay } })}
     >
       {children}
     </motion.section>

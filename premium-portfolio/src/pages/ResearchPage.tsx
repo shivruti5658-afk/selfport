@@ -72,19 +72,19 @@ const ResearchPage: React.FC = () => {
       {/* Header Section */}
       <AnimatedSection 
         direction="center" 
-        className="min-h-screen text-white px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center"
+        className="min-h-[60vh] sm:min-h-screen text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20 flex items-center justify-center"
       >
         <div className="max-w-7xl mx-auto text-center">
           <AnimatedText 
             className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
-            delay={100}
+            delay={0}
             splitWords
           >
             Research & Development
           </AnimatedText>
           <AnimatedText 
             className="text-xl text-gray-300 max-w-3xl mx-auto"
-            delay={200}
+            delay={0}
           >
             Cutting-edge research initiatives advancing aerospace engineering technology and innovation
           </AnimatedText>
@@ -94,26 +94,26 @@ const ResearchPage: React.FC = () => {
       {/* Research Areas */}
       <AnimatedSection 
         direction="up" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={200}
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
-            className="text-3xl font-bold mb-8 text-purple-400 text-center"
-            delay={300}
+            className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-purple-400 text-center"
+            delay={0}
           >
             Current Research Areas
           </AnimatedText>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-4 sm:gap-6 lg:gap-8 md:grid-cols-2">
             {researchAreas.map((area, index) => (
               <div 
                 key={index}
-                className="bg-gray-900/50 border border-gray-800 rounded-lg p-8 hover:border-purple-400/50 transition-all duration-300"
+                className="bg-gray-900/50 border border-gray-800 rounded-lg p-4 sm:p-6 lg:p-8 hover:border-purple-400/50 transition-all duration-300"
               >
-                <div className="flex items-start justify-between mb-6">
+                <div className="flex items-start justify-between mb-4 sm:mb-6">
                   <div className="flex-1">
                     <AnimatedText 
-                      className="text-2xl font-bold text-white mb-2"
+                      className="text-xl sm:text-2xl font-bold text-white mb-2"
                       delay={400 + index * 100}
                     >
                       {area.title}
@@ -131,7 +131,7 @@ const ResearchPage: React.FC = () => {
                   <div className="text-right">
                     <AnimatedText 
                       className="text-2xl font-bold text-purple-400"
-                      delay={500 + index * 100}
+                      delay={0}
                     >
                       {area.progress}%
                     </AnimatedText>
@@ -141,7 +141,7 @@ const ResearchPage: React.FC = () => {
                 
                 <AnimatedText 
                   className="text-gray-300 leading-relaxed mb-6"
-                  delay={600 + index * 100}
+                  delay={0}
                 >
                   {area.description}
                 </AnimatedText>
@@ -149,7 +149,7 @@ const ResearchPage: React.FC = () => {
                 <div className="mb-6">
                   <AnimatedText 
                     className="text-sm font-semibold text-blue-400 mb-3"
-                    delay={700 + index * 100}
+                    delay={0}
                   >
                     Technologies
                   </AnimatedText>
@@ -169,7 +169,7 @@ const ResearchPage: React.FC = () => {
                   <div>
                     <AnimatedText 
                       className="text-xl font-bold text-green-400"
-                      delay={800 + index * 100}
+                      delay={0}
                     >
                       {area.publications}
                     </AnimatedText>
@@ -178,7 +178,7 @@ const ResearchPage: React.FC = () => {
                   <div>
                     <AnimatedText 
                       className="text-xl font-bold text-yellow-400"
-                      delay={900 + index * 100}
+                      delay={0}
                     >
                       {area.patents}
                     </AnimatedText>
@@ -187,7 +187,7 @@ const ResearchPage: React.FC = () => {
                   <div>
                     <AnimatedText 
                       className="text-xl font-bold text-purple-400"
-                      delay={1000 + index * 100}
+                      delay={0}
                     >
                       {area.progress}%
                     </AnimatedText>
@@ -204,12 +204,12 @@ const ResearchPage: React.FC = () => {
       <AnimatedSection 
         direction="left" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={300}
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
             className="text-3xl font-bold mb-8 text-blue-400 text-center"
-            delay={1100}
+            delay={0}
           >
             Research Methodologies
           </AnimatedText>
@@ -222,13 +222,13 @@ const ResearchPage: React.FC = () => {
                 <div className="text-3xl mb-3">🔬</div>
                 <AnimatedText 
                   className="text-lg font-bold text-white mb-2"
-                  delay={1200 + index * 100}
+                  delay={0}
                 >
                   {method.name}
                 </AnimatedText>
                 <AnimatedText 
                   className="text-gray-300 text-sm"
-                  delay={1300 + index * 100}
+                  delay={0}
                 >
                   {method.description}
                 </AnimatedText>
@@ -254,20 +254,20 @@ const ResearchPage: React.FC = () => {
       <AnimatedSection 
         direction="right" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={400}
+        delay={0}
       >
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 border border-purple-400/30 rounded-lg p-12">
             <AnimatedText 
               className="text-3xl font-bold mb-6 text-white"
-              delay={1400}
+              delay={0}
               splitWords
             >
               Research Impact & Future Directions
             </AnimatedText>
             <AnimatedText 
               className="text-xl text-gray-300 mb-8 leading-relaxed"
-              delay={1500}
+              delay={0}
             >
               My research focuses on practical applications that advance aerospace technology while maintaining academic rigor. 
               Current work aims to bridge the gap between theoretical research and industrial implementation, 
@@ -277,7 +277,7 @@ const ResearchPage: React.FC = () => {
               <div className="text-center">
                 <AnimatedText 
                   className="text-2xl font-bold text-purple-400 mb-2"
-                  delay={1600}
+                  delay={0}
                 >
                   Innovation
                 </AnimatedText>
@@ -286,7 +286,7 @@ const ResearchPage: React.FC = () => {
               <div className="text-center">
                 <AnimatedText 
                   className="text-2xl font-bold text-blue-400 mb-2"
-                  delay={1700}
+                  delay={0}
                 >
                   Application
                 </AnimatedText>
@@ -295,7 +295,7 @@ const ResearchPage: React.FC = () => {
               <div className="text-center">
                 <AnimatedText 
                   className="text-2xl font-bold text-green-400 mb-2"
-                  delay={1800}
+                  delay={0}
                 >
                   Collaboration
                 </AnimatedText>

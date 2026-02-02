@@ -74,6 +74,11 @@ const MiscellaneousProjectsPage: React.FC = () => {
       icon: "",
       title: "Aerospace Applications",
       description: "UAV System Design, Propulsion Analysis, Computational Tools, Performance Optimization"
+    },
+    {
+      icon: "",
+      title: "Communication & Research Presentation",
+      description: "Technical Documentation, Research Papers, Conference Presentations, Data Visualization"
     }
   ];
 
@@ -82,19 +87,19 @@ const MiscellaneousProjectsPage: React.FC = () => {
       {/* Header Section */}
       <AnimatedSection 
         direction="center" 
-        className="min-h-screen text-white px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center"
+        className="min-h-[60vh] sm:min-h-screen text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20 flex items-center justify-center"
       >
         <div className="max-w-7xl mx-auto text-center">
           <AnimatedText 
             className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
-            delay={100}
+            delay={0}
             splitWords
           >
             Miscellaneous Projects & Technical Work
           </AnimatedText>
           <AnimatedText 
             className="text-xl text-gray-300 max-w-3xl mx-auto"
-            delay={200}
+            delay={0}
           >
             Diverse technical projects showcasing versatility across aerospace engineering, 
             robotics, software development, and digital innovation.
@@ -105,21 +110,21 @@ const MiscellaneousProjectsPage: React.FC = () => {
       {/* Projects Grid */}
       <AnimatedSection 
         direction="up" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={200}
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
-            className="text-3xl font-bold mb-8 text-green-400 text-center"
-            delay={300}
+            className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-green-400 text-center"
+            delay={0}
           >
             Featured Projects
           </AnimatedText>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <div 
                 key={index}
-                className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-green-400/50 transition-all duration-300 h-full"
+                className="bg-gray-900/50 border border-gray-800 rounded-lg p-4 sm:p-6 lg:p-8 hover:border-green-400/50 transition-all duration-300 h-full"
               >
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
@@ -130,20 +135,20 @@ const MiscellaneousProjectsPage: React.FC = () => {
                   </div>
                   <AnimatedText 
                     className="text-xl font-bold text-white mb-3"
-                    delay={400 + index * 100}
+                    delay={0}
                   >
                     {project.title}
                   </AnimatedText>
                   <AnimatedText 
                     className="text-gray-300 leading-relaxed mb-4"
-                    delay={500 + index * 100}
+                    delay={0}
                   >
                     {project.description}
                   </AnimatedText>
                   <div className="mb-4">
                     <AnimatedText 
                       className="text-sm font-semibold text-blue-400 mb-2"
-                      delay={600 + index * 100}
+                      delay={0}
                     >
                       Technologies
                     </AnimatedText>
@@ -161,7 +166,7 @@ const MiscellaneousProjectsPage: React.FC = () => {
                   <div>
                     <AnimatedText 
                       className="text-sm font-semibold text-purple-400 mb-2"
-                      delay={700 + index * 100}
+                      delay={0}
                     >
                       Key Features
                     </AnimatedText>
@@ -183,35 +188,40 @@ const MiscellaneousProjectsPage: React.FC = () => {
         </div>
       </AnimatedSection>
 
-      {/* Skills & Expertise */}
+      {/* Technical Skills Section */}
       <AnimatedSection 
-        direction="left" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={300}
+        direction="right" 
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
-            className="text-3xl font-bold mb-8 text-blue-400 text-center"
-            delay={800}
+            className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-blue-400 text-center"
+            delay={0}
           >
             Technical Expertise
           </AnimatedText>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-4 place-items-center">
             {technicalSkills.map((skill, index) => (
               <div 
                 key={index}
-                className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-400/50 transition-all duration-300 text-center"
+                className="bg-gray-900/50 border border-gray-800 rounded-lg p-4 sm:p-6 lg:p-8 hover:border-blue-400/50 transition-all duration-300 text-center"
               >
                 <div className="text-3xl mb-3">{skill.icon}</div>
                 <AnimatedText 
-                  className="text-lg font-bold text-white mb-2"
-                  delay={900 + index * 100}
+                  className={`text-lg font-bold mb-2 ${
+                    index === 0 ? 'bg-gradient-to-r from-blue-400 to-purple-500' :
+                    index === 1 ? 'bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-600' :
+                    index === 2 ? 'bg-gradient-to-r from-amber-400 via-orange-500 to-red-600' :
+                    'bg-gradient-to-r from-violet-400 via-purple-500 to-indigo-600'
+                  } bg-clip-text text-transparent`}
+                  delay={0}
                 >
                   {skill.title}
                 </AnimatedText>
                 <AnimatedText 
                   className="text-gray-300"
-                  delay={1000 + index * 100}
+                  delay={0}
                 >
                   {skill.description}
                 </AnimatedText>
@@ -225,20 +235,20 @@ const MiscellaneousProjectsPage: React.FC = () => {
       <AnimatedSection 
         direction="center" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={400}
+        delay={0}
       >
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border border-green-400/30 rounded-lg p-12">
             <AnimatedText 
               className="text-3xl font-bold mb-6 text-white"
-              delay={1100}
+              delay={0}
               splitWords
             >
               Continuous Innovation & Learning
             </AnimatedText>
             <AnimatedText 
               className="text-xl text-gray-300 mb-8"
-              delay={1200}
+              delay={0}
             >
               I'm constantly exploring new technologies and working on innovative projects that bridge 
               the gap between aerospace engineering and cutting-edge software development.

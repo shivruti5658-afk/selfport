@@ -17,27 +17,11 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('/');
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      
-      // Update active section based on scroll position
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.scrollY + 100;
-
-      sections.forEach((section) => {
-        const htmlElement = section as HTMLElement;
-        const sectionTop = htmlElement.offsetTop;
-        const sectionHeight = htmlElement.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setActiveSection(`/${sectionId}`);
-        }
-      });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -89,7 +73,7 @@ const Navbar = () => {
             <div className="hidden lg:block">
               <div className="flex items-center space-x-1">
                 {navLinks.map((link) => {
-                  const isActive = location.pathname === link.path || activeSection === link.path;
+                  const isActive = location.pathname === link.path;
                   return (
                     <motion.div
                       key={link.name}
@@ -105,6 +89,7 @@ const Navbar = () => {
                             ? 'text-white'
                             : 'text-gray-300 group-hover:text-white'
                         }`}
+                        onClick={() => window.scrollTo(0, 0)}
                       >
                         {link.name}
                       </NavLink>
@@ -179,7 +164,10 @@ const Navbar = () => {
                   >
                     <NavLink
                       to={link.path}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        window.scrollTo(0, 0);
+                      }}
                       className={`flex items-center justify-between w-full ${
                         isActive 
                           ? 'text-white bg-blue-600/20 border-blue-500/30' 

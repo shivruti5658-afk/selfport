@@ -60,19 +60,19 @@ const ProjectsPage: React.FC = () => {
       {/* Header Section */}
       <AnimatedSection 
         direction="center" 
-        className="min-h-screen text-white px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center"
+        className="min-h-[60vh] sm:min-h-screen text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20 flex items-center justify-center"
       >
         <div className="max-w-7xl mx-auto text-center">
           <AnimatedText 
             className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent"
-            delay={100}
+            delay={0}
             splitWords
           >
             Selected Projects
           </AnimatedText>
           <AnimatedText 
             className="text-xl text-gray-300 max-w-3xl mx-auto"
-            delay={200}
+            delay={0}
           >
             Innovative aerospace engineering projects showcasing technical excellence and real-world impact
           </AnimatedText>
@@ -82,8 +82,8 @@ const ProjectsPage: React.FC = () => {
       {/* Projects Grid */}
       <AnimatedSection 
         direction="up" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={200}
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -92,7 +92,7 @@ const ProjectsPage: React.FC = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className={`group relative overflow-hidden cursor-pointer transition-all duration-500 bg-gray-900/50 rounded-xl border ${
+                  className={`group relative overflow-hidden cursor-pointer transition-all duration-500 bg-gray-900/50 rounded-lg border p-4 sm:p-6 lg:p-8 ${
                     hoveredIndex === index
                       ? "transform -translate-y-2 border-blue-500 bg-gray-800"
                       : "hover:transform hover:-translate-y-1 hover:border-blue-400 border-gray-800"
@@ -116,7 +116,7 @@ const ProjectsPage: React.FC = () => {
                     <div className="flex items-start justify-between">
                       <AnimatedText 
                         className="text-3xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300"
-                        delay={300 + index * 100}
+                        delay={0}
                       >
                         {project.title}
                       </AnimatedText>
@@ -128,7 +128,7 @@ const ProjectsPage: React.FC = () => {
                     {/* Project Description */}
                     <AnimatedText 
                       className="text-gray-300 leading-relaxed"
-                      delay={400 + index * 100}
+                      delay={0}
                     >
                       {expandedIndex === index ? project.fullDescription : project.shortDescription}
                     </AnimatedText>
@@ -174,7 +174,7 @@ const ProjectsPage: React.FC = () => {
                         <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                         <AnimatedText 
                           className="text-sm text-gray-400 font-medium"
-                          delay={500 + index * 100}
+                          delay={0}
                         >
                           <span className="text-white">Impact:</span> {project.impact}
                         </AnimatedText>
@@ -193,13 +193,13 @@ const ProjectsPage: React.FC = () => {
                   <div className="p-6 space-y-6">
                     <AnimatedText 
                       className="text-xl font-bold text-blue-400"
-                      delay={600}
+                      delay={0}
                     >
                       Innovation Through Code
                     </AnimatedText>
                     <AnimatedText 
                       className="text-gray-300 text-sm leading-relaxed"
-                      delay={700}
+                      delay={0}
                     >
                       Each project represents a unique challenge at the intersection of aerospace engineering and software development, pushing the boundaries of what's possible.
                     </AnimatedText>
@@ -256,7 +256,7 @@ const ProjectsPage: React.FC = () => {
                     <div className="p-6 space-y-4">
                       <AnimatedText 
                         className="text-lg font-semibold text-white"
-                        delay={800}
+                        delay={0}
                       >
                         Project Metrics
                       </AnimatedText>
@@ -265,7 +265,7 @@ const ProjectsPage: React.FC = () => {
                           <span className="text-gray-400 text-sm">Total Projects</span>
                           <AnimatedText 
                             className="text-blue-400 font-bold"
-                            delay={900}
+                            delay={0}
                           >
                             {projects.length}
                           </AnimatedText>
@@ -274,7 +274,7 @@ const ProjectsPage: React.FC = () => {
                           <span className="text-gray-400 text-sm">Open Source</span>
                           <AnimatedText 
                             className="text-blue-400 font-bold"
-                            delay={1000}
+                            delay={0}
                           >
                             100%
                           </AnimatedText>
@@ -283,7 +283,7 @@ const ProjectsPage: React.FC = () => {
                           <span className="text-gray-400 text-sm">Avg. Impact</span>
                           <AnimatedText 
                             className="text-white font-bold"
-                            delay={1100}
+                            delay={0}
                           >
                             High
                           </AnimatedText>
@@ -302,20 +302,20 @@ const ProjectsPage: React.FC = () => {
       <AnimatedSection 
         direction="center" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={400}
+        delay={0}
       >
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-blue-400/30 rounded-lg p-12">
             <AnimatedText 
               className="text-3xl font-bold mb-6 text-white"
-              delay={1200}
+              delay={0}
               splitWords
             >
               Building Tomorrow's Aerospace Solutions
             </AnimatedText>
             <AnimatedText 
               className="text-xl text-gray-300 mb-8"
-              delay={1300}
+              delay={0}
             >
               Each project represents a step forward in aerospace innovation, combining cutting-edge technology 
               with practical engineering solutions to address real-world challenges.

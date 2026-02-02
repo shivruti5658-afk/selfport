@@ -108,56 +108,56 @@ const InterestsPage: React.FC = () => {
       {/* Header Section */}
       <AnimatedSection 
         direction="center" 
-        className="min-h-screen text-white px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center"
+        className="min-h-[60vh] sm:min-h-screen text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20 flex items-center justify-center"
       >
         <div className="max-w-7xl mx-auto text-center">
           <AnimatedText 
             className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
-            delay={100}
+            delay={0}
             splitWords
           >
             Areas of Interest
           </AnimatedText>
           <AnimatedText 
             className="text-xl text-gray-300 max-w-3xl mx-auto"
-            delay={200}
+            delay={0}
           >
             Specialized focus areas driving my research and professional development in aerospace engineering
           </AnimatedText>
         </div>
       </AnimatedSection>
 
-      {/* Main Interest Areas */}
+      {/* Interests Grid */}
       <AnimatedSection 
         direction="up" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={200}
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
-            className="text-3xl font-bold mb-8 text-purple-400 text-center"
-            delay={300}
+            className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-purple-400 text-center"
+            delay={0}
           >
             Core Interest Areas
           </AnimatedText>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {interests.map((interest, index) => (
               <div 
                 key={index}
-                className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-purple-400/50 transition-all duration-300"
+                className="bg-gray-900/50 border border-gray-800 rounded-lg p-4 sm:p-6 lg:p-8 hover:border-purple-400/50 transition-all duration-300"
               >
                 <div className={`text-4xl mb-4 bg-gradient-to-r ${interest.color} bg-clip-text text-transparent`}>
                   {interest.icon}
                 </div>
                 <AnimatedText 
                   className="text-xl font-bold text-white mb-3"
-                  delay={400 + index * 100}
+                  delay={0}
                 >
                   {interest.category}
                 </AnimatedText>
                 <AnimatedText 
                   className="text-gray-300 leading-relaxed"
-                  delay={500 + index * 100}
+                  delay={0}
                 >
                   {interest.description}
                 </AnimatedText>
@@ -169,14 +169,14 @@ const InterestsPage: React.FC = () => {
 
       {/* Research Focus */}
       <AnimatedSection 
-        direction="left" 
-        className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={300}
+        direction="right" 
+        className="text-white px-3 sm:px-4 lg:px-8 py-12 sm:py-16 lg:py-20"
+        delay={0}
       >
         <div className="max-w-7xl mx-auto">
           <AnimatedText 
-            className="text-3xl font-bold mb-8 text-blue-400 text-center"
-            delay={600}
+            className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-blue-400 text-center"
+            delay={0}
           >
             Research Focus Areas
           </AnimatedText>
@@ -184,7 +184,7 @@ const InterestsPage: React.FC = () => {
             {researchFocus.map((focus, index) => (
               <div 
                 key={index}
-                className={`bg-gray-900/50 border rounded-lg p-6 transition-all duration-300 ${
+                className={`bg-gray-900/50 border rounded-lg p-4 sm:p-6 lg:p-8 transition-all duration-300 ${
                   focus.current 
                     ? 'border-blue-400/50 hover:border-blue-400' 
                     : 'border-gray-800 hover:border-gray-600'
@@ -193,7 +193,7 @@ const InterestsPage: React.FC = () => {
                 <div className="flex items-start justify-between mb-4">
                   <AnimatedText 
                     className="text-xl font-bold text-white"
-                    delay={700 + index * 100}
+                    delay={0}
                   >
                     {focus.title}
                   </AnimatedText>
@@ -205,7 +205,7 @@ const InterestsPage: React.FC = () => {
                 </div>
                 <AnimatedText 
                   className="text-gray-300 leading-relaxed"
-                  delay={800 + index * 100}
+                  delay={0}
                 >
                   {focus.description}
                 </AnimatedText>
@@ -219,20 +219,20 @@ const InterestsPage: React.FC = () => {
       <AnimatedSection 
         direction="right" 
         className="text-white px-4 sm:px-6 lg:px-8 py-20"
-        delay={400}
+        delay={0}
       >
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-purple-900/20 to-blue-900/20 border border-purple-400/30 rounded-lg p-12">
             <AnimatedText 
               className="text-3xl font-bold mb-6 text-white"
-              delay={900}
+              delay={0}
               splitWords
             >
               Future Aspirations
             </AnimatedText>
             <AnimatedText 
               className="text-xl text-gray-300 mb-8 leading-relaxed"
-              delay={1000}
+              delay={0}
             >
               My goal is to contribute to the advancement of aerospace technology through innovative research 
               and practical applications. I aim to work on cutting-edge propulsion systems, develop next-generation 
@@ -243,7 +243,7 @@ const InterestsPage: React.FC = () => {
               <div className="text-center">
                 <AnimatedText 
                   className="text-2xl font-bold text-purple-400 mb-2"
-                  delay={1100}
+                  delay={0}
                 >
                   Innovation
                 </AnimatedText>
@@ -252,7 +252,7 @@ const InterestsPage: React.FC = () => {
               <div className="text-center">
                 <AnimatedText 
                   className="text-2xl font-bold text-blue-400 mb-2"
-                  delay={1200}
+                  delay={0}
                 >
                   Research
                 </AnimatedText>
@@ -261,7 +261,7 @@ const InterestsPage: React.FC = () => {
               <div className="text-center">
                 <AnimatedText 
                   className="text-2xl font-bold text-green-400 mb-2"
-                  delay={1300}
+                  delay={0}
                 >
                   Application
                 </AnimatedText>

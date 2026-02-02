@@ -247,17 +247,12 @@ export const useScrollAnimation = (threshold = ANIMATION_CONSTANTS.VIEWPORT.NORM
 // Animation Props Generator
 export const getAnimationProps = (
   variants: Variants,
-  custom?: any,
-  threshold?: number
+  custom?: any
 ): MotionProps => {
   const baseProps: MotionProps = {
     variants,
     initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { 
-      once: false, 
-      amount: threshold || ANIMATION_CONSTANTS.VIEWPORT.NORMAL 
-    },
+    animate: 'visible',
   };
 
   const isMobile = isMobileDevice();
