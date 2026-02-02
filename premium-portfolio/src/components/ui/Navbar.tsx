@@ -63,8 +63,11 @@ const Navbar = () => {
                 className="group flex items-center space-x-2"
                 {...hoverVariants}
               >
+                <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">SK</span>
+                </div>
                 <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl">
-                  Portfolio <span className="text-cyan-400">(S.K.)</span>
+                  Shivam Kumar <span className="text-cyan-400">Portfolio</span>
                 </span>
               </NavLink>
             </motion.div>
