@@ -49,7 +49,7 @@ const AboutPage: React.FC = () => {
       phase: "Academic Foundation",
       period: "2022 - 2026",
       description: "Building strong theoretical foundation in aerospace engineering with focus on propulsion systems, aerodynamics, and computational methods.",
-      achievements: ["Dean's List", "Academic Excellence Awards", "Technical Competitions"]
+      achievements: [ "Ranked in Top 5%", "Honors in Core Subjects", "Technical Publications"]
     },
     {
       phase: "Research Experience",
@@ -196,48 +196,54 @@ const AboutPage: React.FC = () => {
             Professional Journey
           </AnimatedText>
           <div className="relative">
-            {/* Timeline - Mobile: Left aligned, Tablet/Medium: Left aligned with more space, Desktop: Center */}
-            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-400 to-blue-400"></div>
+            {/* Timeline - Center aligned on all screens */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-400 to-blue-400"></div>
             
-            <div className="space-y-4 sm:space-y-6 md:space-y-12">
+            <div className="space-y-8 md:space-y-12">
               {professionalJourney.map((phase, index) => (
                 <div 
                   key={index}
-                  className={`relative flex items-center md:justify-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
+                  className={`relative flex items-center ${
+                    index % 2 === 0 ? 'justify-start' : 'justify-end'
+                  }`}
                 >
-                  {/* Mobile/Tablet: Full width with left padding, Desktop: Alternating 5/12 width */}
-                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'} pl-6 md:pl-0`}>
-                    <AnimatedText 
-                      className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2"
-                      delay={0}
-                    >
-                      {phase.phase}
-                    </AnimatedText>
-                    <AnimatedText 
-                      className="text-xs sm:text-sm text-gray-400 mb-1"
-                      delay={0}
-                    >
-                      {phase.period}
-                    </AnimatedText>
-                    <AnimatedText 
-                      className="text-sm sm:text-base text-gray-300 mb-2 sm:mb-4 leading-relaxed"
-                      delay={0}
-                    >
-                      {phase.description}
-                    </AnimatedText>
-                    <div className="flex flex-wrap gap-1 sm:gap-1.5 md:gap-2">
-                      {phase.achievements.map((achievement, idx) => (
-                        <span 
-                          key={idx}
-                          className="px-1 py-0.5 sm:px-1.5 sm:py-0.5 md:px-2 md:py-1 bg-purple-900/50 text-purple-400 rounded-full text-xs border border-purple-400/30"
-                        >
-                          {achievement}
-                        </span>
-                      ))}
+                  {/* Content - Alternating sides on desktop, stacked on mobile */}
+                  <div className={`w-full md:w-6/12 ${
+                    index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'
+                  } text-left`}>
+                    <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-purple-400/50 transition-all duration-300">
+                      <AnimatedText 
+                        className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2"
+                        delay={0}
+                      >
+                        {phase.phase}
+                      </AnimatedText>
+                      <AnimatedText 
+                        className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3"
+                        delay={0}
+                      >
+                        {phase.period}
+                      </AnimatedText>
+                      <AnimatedText 
+                        className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4 leading-relaxed"
+                        delay={0}
+                      >
+                        {phase.description}
+                      </AnimatedText>
+                      <div className="flex flex-wrap gap-1 sm:gap-1.5 md:gap-2">
+                        {phase.achievements.map((achievement, idx) => (
+                          <span 
+                            key={idx}
+                            className="px-2 py-1 sm:px-2 sm:py-1 md:px-3 md:py-1 bg-purple-900/50 text-purple-400 rounded-full text-xs sm:text-sm border border-purple-400/30"
+                          >
+                            {achievement}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  {/* Timeline dot - Mobile/Tablet: Left aligned, Desktop: Center */}
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-purple-400 rounded-full border-2 sm:border-4 border-gray-900"></div>
+                  {/* Timeline dot - Always centered */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-purple-400 rounded-full border-2 sm:border-4 border-gray-900"></div>
                 </div>
               ))}
             </div>

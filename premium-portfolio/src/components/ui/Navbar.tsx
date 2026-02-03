@@ -63,11 +63,13 @@ const Navbar = () => {
                 className="group flex items-center space-x-2"
                 {...hoverVariants}
               >
-                <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">SK</span>
-                </div>
+                <img 
+                  src="/src/assets/my logo2.png" 
+                  alt="Shivam Kumar Logo" 
+                  className="w-9 h-9 rounded-lg object-cover"
+                />
                 <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl">
-                  Shivam Kumar <span className="text-cyan-400">Portfolio</span>
+                  Portfolio <span className="text-cyan-400">(S.K)</span>
                 </span>
               </NavLink>
             </motion.div>
@@ -76,7 +78,6 @@ const Navbar = () => {
             <div className="hidden lg:block">
               <div className="flex items-center space-x-1">
                 {navLinks.map((link) => {
-                  const isActive = location.pathname === link.path;
                   return (
                     <motion.div
                       key={link.name}
@@ -87,7 +88,7 @@ const Navbar = () => {
                     >
                       <NavLink
                         to={link.path}
-                        className={`relative z-10 ${
+                        className={({ isActive }) => `relative z-10 ${
                           isActive
                             ? 'text-white'
                             : 'text-gray-300 group-hover:text-white'
@@ -98,23 +99,21 @@ const Navbar = () => {
                       </NavLink>
                       
                       {/* Active indicator */}
-                      {isActive && (
-                        <motion.div 
-                          className="absolute inset-0 bg-gray-800 rounded-lg" 
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ duration: ANIMATION_CONSTANTS.DURATION.FAST }}
-                        />
-                      )}
+                      <NavLink
+                        to={link.path}
+                        className={({ isActive }) => `absolute inset-0 bg-gray-800 rounded-lg ${
+                          isActive ? 'opacity-100' : 'opacity-0'
+                        }`}
+                        onClick={() => window.scrollTo(0, 0)}
+                      />
                       
                       {/* Hover underline */}
-                      <motion.div 
-                        className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent ${
+                      <NavLink
+                        to={link.path}
+                        className={({ isActive }) => `absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent ${
                           isActive ? 'w-full' : 'w-0'
                         }`}
-                        initial={{ width: isActive ? '100%' : '0%' }}
-                        whileHover={{ width: '100%' }}
-                        transition={{ duration: ANIMATION_CONSTANTS.DURATION.NORMAL }}
+                        onClick={() => window.scrollTo(0, 0)}
                       />
                     </motion.div>
                   );
@@ -156,7 +155,6 @@ const Navbar = () => {
         >
           <div className="px-4 py-6 space-y-1 max-h-screen overflow-y-auto">
               {navLinks.map((link) => {
-                const isActive = location.pathname === link.path;
                 return (
                   <motion.div
                     key={link.name}
@@ -167,24 +165,18 @@ const Navbar = () => {
                   >
                     <NavLink
                       to={link.path}
-                      onClick={() => {
-                        setIsMobileMenuOpen(false);
-                        window.scrollTo(0, 0);
-                      }}
-                      className={`flex items-center justify-between w-full ${
+                      className={({ isActive }) => `flex items-center justify-between w-full ${
                         isActive 
                           ? 'text-white bg-blue-600/20 border-blue-500/30' 
                           : 'text-gray-200 hover:text-white'
                       }`}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        window.scrollTo(0, 0);
+                      }}
                     >
                       <span>{link.name}</span>
-                      {isActive && (
-                        <motion.div 
-                          className="w-3 h-3 bg-blue-400 rounded-full border-2 border-white" 
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        />
-                      )}
+                      <span className="w-3 h-3 bg-blue-400 rounded-full border-2 border-white hidden group-[.active]:block"></span>
                     </NavLink>
                   </motion.div>
                 );

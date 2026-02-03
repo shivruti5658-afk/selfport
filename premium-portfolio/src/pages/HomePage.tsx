@@ -31,14 +31,14 @@ const HomePage: React.FC = () => {
                 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white leading-tight cursor-default tracking-tight mt-8 sm:mt-10 lg:mt-12"
                 delay={0}
               >
-                Shivam kumar UPDATED2
+                Shivam kumar
               </AnimatedText>
             </motion.div>
             
             {/* Professional Title */}
             <motion.div className="space-y-2 sm:space-y-3 lg:space-y-4" variants={staggeredChildrenVariants}>
               <AnimatedText 
-                className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-yellow-400 tracking-wide"
+                className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-pink-400 tracking-wide"
                 delay={0}
               >
                 Aerospace Engineering Undergraduate
@@ -47,7 +47,7 @@ const HomePage: React.FC = () => {
                 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium text-blue-400 tracking-wide"
                 delay={0}
               >
-                Propulsion & UAV Systems | Research-Oriented Technologist
+                Real Systems | Real Code | Real Impact | Research-Oriented 
               </AnimatedText>
             </motion.div>
             
@@ -67,13 +67,14 @@ const HomePage: React.FC = () => {
             variants={staggeredChildrenVariants}
           >
             <motion.div variants={staggeredChildrenVariants}>
-              <Link
-                to="/contact"
-                className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg shadow-lg inline-block"
+              <a
+                href="/resume.pdf" 
+                download="Shivam_Kumar_Resume.pdf"
+                className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-lg shadow-lg inline-block cursor-pointer"
               >
                 <span className="relative z-10">Download Resume</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Link>
+              </a>
             </motion.div>
             
             <motion.div variants={staggeredChildrenVariants}>
@@ -358,10 +359,28 @@ const HomePage: React.FC = () => {
                 Aerospace & Engineering
               </h3>
               <div className="grid gap-2 sm:gap-3 ml-12 sm:ml-16">
-                {["ANSYS CFD & FEA", "COMSOL Multiphysics", "XFLR5", "OpenRocket", "MATLAB/Simulink", "SolidWorks", "CATIA", "Fusion 360"].map((skill, index) => (
+                {[
+                  { name: "ANSYS CFD & FEA", logo: null },
+                  { name: "COMSOL Multiphysics", logo: null },
+                  { name: "XFLR5", logo: null },
+                  { name: "OpenRocket", logo: null },
+                  { name: "MATLAB/Simulink", logo: null },
+                  { name: "SolidWorks", logo: "SOLIDWORKS_LOGO.jpg" },
+                  { name: "CATIA", logo: "CATIA_LOGO.jpg" },
+                  { name: "Fusion 360", logo: "AUTODESK_LOGO.jpg" }
+                ].map((skill, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                    <span className="text-gray-300">{skill}</span>
+                    {skill.logo && (
+                      <img 
+                        src={`/src/assets/${skill.logo}`} 
+                        alt={`${skill.name} Logo`} 
+                        className="w-5 h-5 mr-2 rounded object-contain"
+                      />
+                    )}
+                    {!skill.logo && (
+                      <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                    )}
+                    <span className="text-gray-300">{skill.name}</span>
                   </div>
                 ))}
               </div>

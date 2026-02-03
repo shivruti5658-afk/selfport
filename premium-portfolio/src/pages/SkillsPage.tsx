@@ -5,8 +5,20 @@ import AnimatedSection from '../components/ui/AnimatedSection';
 import AnimatedText from '../components/ui/AnimatedText';
 import AnimatedSkillBar from '../components/ui/AnimatedSkillBar';
 
+interface Skill {
+  name: string;
+  level: number;
+  logo?: string | null;
+}
+
+interface SkillCategory {
+  category: string;
+  description: string;
+  skills: Skill[];
+}
+
 const SkillsPage: React.FC = () => {
-  const skillCategories = [
+  const skillCategories: SkillCategory[] = [
     {
       category: "Aerospace Engineering",
       description: "Core aerospace engineering disciplines and analysis tools",
@@ -22,11 +34,12 @@ const SkillsPage: React.FC = () => {
       category: "Engineering Software",
       description: "Professional engineering software and computational tools",
       skills: [
-        { name: "ANSYS Fluent & CFD", level: 82 },
-        { name: "ANSYS Mechanical", level: 78 },
-        { name: "MATLAB & Simulink", level: 85 },
-        { name: "SolidWorks", level: 80 },
-        { name: "CATIA", level: 75 },
+        { name: "ANSYS Fluent & CFD", level: 82, logo: null },
+        { name: "ANSYS Mechanical", level: 78, logo: null },
+        { name: "MATLAB & Simulink", level: 85, logo: null },
+        { name: "SolidWorks", level: 80, logo: "SOLIDWORKS_LOGO.jpg" },
+        { name: "CATIA", level: 75, logo: "CATIA_LOGO.jpg" },
+        { name: "AutoCAD", level: 70, logo: "AUTOCAD_LOGO.jpg" },
       ],
     },
     {
@@ -106,13 +119,23 @@ const SkillsPage: React.FC = () => {
                 </AnimatedText>
                 <div className="space-y-3 sm:space-y-4">
                   {category.skills.map((skill, skillIndex) => (
-                    <AnimatedSkillBar
-                      key={skillIndex}
-                      skill={skill.name}
-                      level={skill.level}
-                      color={categoryIndex === 0 ? "blue" : categoryIndex === 1 ? "cyan" : categoryIndex === 2 ? "purple" : categoryIndex === 3 ? "green" : "yellow"}
-                      delay={400 + categoryIndex * 100 + skillIndex * 50}
-                    />
+                    <div key={skillIndex} className="flex items-center">
+                      {skill.logo && (
+                        <img 
+                          src={`/src/assets/${skill.logo}`} 
+                          alt={`${skill.name} Logo`} 
+                          className="w-5 h-5 mr-2 rounded object-contain"
+                        />
+                      )}
+                      <div className="flex-1">
+                        <AnimatedSkillBar
+                          skill={skill.name}
+                          level={skill.level}
+                          color={categoryIndex === 0 ? "blue" : categoryIndex === 1 ? "cyan" : categoryIndex === 2 ? "purple" : categoryIndex === 3 ? "green" : "yellow"}
+                          delay={400 + categoryIndex * 100 + skillIndex * 50}
+                        />
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>

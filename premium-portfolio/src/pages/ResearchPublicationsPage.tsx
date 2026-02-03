@@ -245,6 +245,13 @@ const ResearchPublicationsPage: React.FC = () => {
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 sm:mb-6">
                   <div className="flex-1">
                     <div className="flex items-center mb-2 sm:mb-4">
+                      {project.institution.includes("ISRO") && (
+                        <img 
+                          src="/src/assets/ISRO_LOGO.jpg" 
+                          alt="ISRO Logo" 
+                          className="w-8 h-8 mr-3 rounded object-contain"
+                        />
+                      )}
                       <span className={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${
                         project.status === 'Published' 
                           ? 'bg-green-900/50 text-green-400 border border-green-400/30'
