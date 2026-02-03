@@ -184,28 +184,28 @@ const ExperiencePage: React.FC = () => {
                     <div className="flex items-center mb-2 sm:mb-4">
                       {exp.company.includes("ISRO") && (
                         <img 
-                          src="/src/assets/ISRO_LOGO.jpg" 
+                          src="/ISRO_LOGO.jpg" 
                           alt="ISRO Logo" 
                           className="w-8 h-8 mr-3 rounded object-contain"
                         />
                       )}
                       {exp.company.includes("Fly Dheera") && (
                         <img 
-                          src="/src/assets/FLYDHEERA_LOGO.jpg" 
+                          src="/FLYDHEERA_LOGO.jpg" 
                           alt="Fly Dheera Logo" 
                           className="w-8 h-8 mr-3 rounded object-contain"
                         />
                       )}
                       {exp.company.includes("Aarsenalcorp") && (
                         <img 
-                          src="/src/assets/AAARC_LOGO.jpg" 
+                          src="/AAARC_LOGO.jpg" 
                           alt="AAARC Logo" 
                           className="w-8 h-8 mr-3 rounded object-contain"
                         />
                       )}
                       {exp.company.includes("CLICK ASIA") && (
                         <img 
-                          src="/src/assets/CLICKASIA_LOGO.png" 
+                          src="/CLICKASIA_LOGO.png" 
                           alt="Click Asia Logo" 
                           className="w-8 h-8 mr-3 rounded object-contain"
                         />

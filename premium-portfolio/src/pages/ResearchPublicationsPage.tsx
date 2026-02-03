@@ -247,7 +247,7 @@ const ResearchPublicationsPage: React.FC = () => {
                     <div className="flex items-center mb-2 sm:mb-4">
                       {project.institution.includes("ISRO") && (
                         <img 
-                          src="/src/assets/ISRO_LOGO.jpg" 
+                          src="/ISRO_LOGO.jpg" 
                           alt="ISRO Logo" 
                           className="w-8 h-8 mr-3 rounded object-contain"
                         />

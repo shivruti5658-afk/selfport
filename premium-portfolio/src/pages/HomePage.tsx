@@ -372,7 +372,7 @@ const HomePage: React.FC = () => {
                   <div key={index} className="flex items-center">
                     {skill.logo && (
                       <img 
-                        src={`/src/assets/${skill.logo}`} 
+                        src={`/${skill.logo}`} 
                         alt={`${skill.name} Logo`} 
                         className="w-5 h-5 mr-2 rounded object-contain"
                       />
